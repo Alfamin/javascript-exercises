@@ -4,6 +4,10 @@ const totalIntegers = function(array) {
         if(Number.isInteger(el)){
             count++
         }
+        if(Array.isArray(el)){
+          count += totalIntegers(el)
+
+        }
     });
     return count
 };
