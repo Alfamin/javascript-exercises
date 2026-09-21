@@ -29,7 +29,7 @@ describe('totalIntegers', () => {
     expect(totalIntegers([5, 7.7, 7, [45, 1, 0], [4.0, 7, [7.77777, 4567.4]], [5477.654]])).toBe(7);
   });
 
-  test.skip('Returns undefined for non-array/object arguments', () => {
+  test('Returns undefined for non-array/object arguments', () => {
     expect(totalIntegers('2')).toBe(undefined);
     expect(totalIntegers(() => {})).toBe(undefined);
     expect(totalIntegers(42)).toBe(undefined);
@@ -40,7 +40,7 @@ describe('totalIntegers', () => {
     expect(totalIntegers([5, NaN, [NaN, NaN, 64], 4])).toBe(3);
   });
 
-  test.skip('Counts all integers even with deeply nested containing multiple types', () => {
+  test('Counts all integers even with deeply nested containing multiple types', () => {
     expect(totalIntegers([NaN, [[{}], 555 ], '444', [], 74.0, undefined, [[() => {}], [4], Infinity, [[[], -44.0], [null, '-4'], NaN [[]], 6]], () => {}, [[], [-Infinity, ['4'], [4.7, -46.7], NaN]]])).toBe(5);
   });
 

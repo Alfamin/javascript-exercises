@@ -1,19 +1,22 @@
 const totalIntegers = function (array) {
   let count = 0;
 
-  if (Array.isArray(array)) {
-    array.forEach((el) => {
-      if (Number.isInteger(el)) {
-        count++;
-      }
-      if (Array.isArray(el) || typeof el === 'object') {
-        count += totalIntegers(el);
-      }
-    });
-  } else {
-    let objlist = Object.values(array);
-    count += totalIntegers(objlist);
+  if (!Array.isArray(array) && typeof array !== 'object'){
+    return undefined
   }
+    if (Array.isArray(array)) {
+      array.forEach((el) => {
+        if (Number.isInteger(el)) {
+          count++;
+        }
+        if (Array.isArray(el) || typeof el === 'object' && el !== null) {
+          count += totalIntegers(el);
+        }
+      });
+    } else {
+      let objlist = Object.values(array);
+      count += totalIntegers(objlist);
+    }
 
   return count;
 };
