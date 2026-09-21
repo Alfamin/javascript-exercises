@@ -1,15 +1,21 @@
-const totalIntegers = function(array) {
-    let count = 0
-    array.forEach(el => {
-        if(Number.isInteger(el)){
-            count++
-        }
-        if(Array.isArray(el)){
-          count += totalIntegers(el)
+const totalIntegers = function (array) {
+  let count = 0;
 
-        }
+  if (Array.isArray(array)) {
+    array.forEach((el) => {
+      if (Number.isInteger(el)) {
+        count++;
+      }
+      if (Array.isArray(el)) {
+        count += totalIntegers(el);
+      }
     });
-    return count
+  } else {
+    let objlist = Object.values(array);
+    count += totalIntegers(objlist);
+  }
+
+  return count;
 };
 
 // Do not edit below this line
