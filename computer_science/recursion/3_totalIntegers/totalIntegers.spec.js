@@ -44,7 +44,7 @@ describe('totalIntegers', () => {
     expect(totalIntegers([NaN, [[{}], 555 ], '444', [], 74.0, undefined, [[() => {}], [4], Infinity, [[[], -44.0], [null, '-4'], NaN [[]], 6]], () => {}, [[], [-Infinity, ['4'], [4.7, -46.7], NaN]]])).toBe(5);
   });
 
-  test.skip('Counts all integers when nested arrays and objects are mixed together', () => {
+  test('Counts all integers when nested arrays and objects are mixed together', () => {
     expect(totalIntegers([4, 6, { a: 1, b: { a: [5, 10], b: 11 } }, 9])).toBe(7);
   });
 });

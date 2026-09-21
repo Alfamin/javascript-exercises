@@ -6,7 +6,7 @@ const totalIntegers = function (array) {
       if (Number.isInteger(el)) {
         count++;
       }
-      if (Array.isArray(el)) {
+      if (Array.isArray(el) || typeof el === 'object') {
         count += totalIntegers(el);
       }
     });
