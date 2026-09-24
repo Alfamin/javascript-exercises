@@ -37,7 +37,4 @@ function mergeSort(arr) {
   return merge(sortedLeft, sortedRight);
 }
 
-console.log(mergeSort([5, 3, 8, 1, 9, 2]));
-
-
-module.exports = { split, merge };
+module.exports = { split, merge, mergeSort };
